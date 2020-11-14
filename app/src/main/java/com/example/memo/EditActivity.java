@@ -33,9 +33,9 @@ public class EditActivity extends AppCompatActivity {
     DBService myDb;
     private Button btnCancel;//取消
     private Button btnSave;//保存
-    private EditText titleEditText;//标题
-    private  EditText userEditText;//用户
-    private EditText contentEditText;//内容
+    private EditText titleEditText;//姓名
+    private  EditText userEditText;//学号
+    private EditText contentEditText;//体温
     private TextView timeTextView;//时间
     private ImageView picture;
     private Button chooseFromAlbum;
@@ -59,10 +59,10 @@ public class EditActivity extends AppCompatActivity {
         //新建一个数据库
         myDb = new DBService(this);
         SQLiteDatabase db = myDb.getReadableDatabase();
-        //加入标题框
+        //加入标题（姓名）框
         titleEditText = findViewById(R.id.et_title);
         userEditText = findViewById(R.id.et_user);
-        //加入内容框
+        //加入内容（体温）框
         contentEditText = findViewById(R.id.et_content);
         //加入时间框
         timeTextView = findViewById(R.id.edit_time);
@@ -110,25 +110,25 @@ public class EditActivity extends AppCompatActivity {
 
                 //判断标题不能为空
                 if("".equals(titleEditText.getText().toString().replaceAll(" ",""))){
-                    Toast.makeText(EditActivity.this,"标题不能为空",Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditActivity.this,"姓名不能为空",Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 else if (title.length()>10){
-                    Toast.makeText(EditActivity.this,"标题过长",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditActivity.this,"姓名不符合规范",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 else if("".equals(userEditText.getText().toString().replaceAll(" ",""))){
-                    Toast.makeText(EditActivity.this,"用户不能为空",Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditActivity.this,"学号不能为空",Toast.LENGTH_LONG).show();
                     return;
                 }
-                else if (user.length()>5){
-                    Toast.makeText(EditActivity.this,"用户名过长",Toast.LENGTH_SHORT).show();
+                else if (user.length()>10){
+                    Toast.makeText(EditActivity.this,"学号格式有误",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 //判断内容不能为空
                 else if("".equals(contentEditText.getText().toString().replaceAll(" ",""))) {
-                    Toast.makeText(EditActivity.this,"内容不能为空",Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditActivity.this,"体温不能为空",Toast.LENGTH_LONG).show();
                     return;
                 }
                 //把文本框中的相应内容加到数据库中

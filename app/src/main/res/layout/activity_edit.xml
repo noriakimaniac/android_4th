@@ -16,7 +16,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="15sp"
             android:gravity="center"
-            android:text="新建备忘录"
+            android:text="新建学生数据"
             />
 
 
@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:text="标题"
+            android:text="姓名"
             />
 
         <EditText
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="请输入标题">
+            android:hint="请输入姓名">
             <requestFocus />
         </EditText>
     </LinearLayout>
@@ -57,14 +57,14 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:text="用户"
+            android:text="学号"
             />
         <EditText
             android:id="@+id/et_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="请输入用户">
+            android:hint="请输入学号">
         </EditText>
     </LinearLayout>
 
@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:hint="请输入内容"
+        android:hint="请输入体温以及其他说明"
         android:gravity="left"/>
     <ImageView
         android:id="@+id/et_picture"
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:text="图片"
+            android:text="附加图片说明"
             android:textSize="20sp"/>
 
     </LinearLayout>
